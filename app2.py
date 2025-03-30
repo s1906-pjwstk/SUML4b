@@ -2,19 +2,14 @@ import streamlit as st
 import pickle
 from datetime import datetime
 startTime = datetime.now()
-# import znanych nam bibliotek
 
-#import pathlib
-#from pathlib import Path
-#temp = pathlib.PosixPath
-#pathlib.PosixPath = pathlib.WindowsPath
-filename = "model.sv"
+filename = "model2.sv"
 model = pickle.load(open(filename, 'rb'))
 # otwieramy wcześniej wytrenowany model
 
 pclass_d = {0: "Pierwsza", 1: "Druga", 2: "Trzecia"}
 embarked_d = {0: "Cherbourg", 1: "Queenstown", 2: "Southampton"}
-sex_d = {0: "Kobieta", 1: "Mężczyzna"}  # zdefiniowano etykiety dla płci
+sex_d = {0: "Kobieta", 1: "Mężczyzna"}  
 
 def main():
     st.set_page_config(page_title="Predycja przeżycia na Titanicu")
